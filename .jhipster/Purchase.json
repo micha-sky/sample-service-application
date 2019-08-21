@@ -1,0 +1,32 @@
+{
+    "name": "Purchase",
+    "fields": [
+        {
+            "fieldName": "userId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "productSku",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "product",
+            "otherEntityRelationshipName": "sku",
+            "relationshipName": "productSku",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190821093234",
+    "entityTableName": "purchase",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
