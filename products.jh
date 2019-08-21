@@ -1,0 +1,23 @@
+
+
+entity Product {
+	sku String
+    name String
+}
+
+entity Purchase {
+	userId Integer
+    productSku Integer
+}
+
+
+relationship ManyToMany {
+  Purchase{productSku} to Product{sku}
+}
+
+
+dto * with mapstruct
+
+// Set service options to all except few
+service Product with serviceImpl 
+// Set an angular suffix
