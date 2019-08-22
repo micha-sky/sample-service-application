@@ -7,7 +7,7 @@
         },
         {
             "fieldName": "productSku",
-            "fieldType": "Integer"
+            "fieldType": "String"
         }
     ],
     "relationships": [

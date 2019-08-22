@@ -45,9 +45,8 @@ public class PurchaseResourceIT {
     private static final Integer UPDATED_USER_ID = 2;
     private static final Integer SMALLER_USER_ID = 1 - 1;
 
-    private static final Integer DEFAULT_PRODUCT_SKU = 1;
-    private static final Integer UPDATED_PRODUCT_SKU = 2;
-    private static final Integer SMALLER_PRODUCT_SKU = 1 - 1;
+    private static final String DEFAULT_PRODUCT_SKU = "AAAAAAAAAA";
+    private static final String UPDATED_PRODUCT_SKU = "BBBBBBBBBB";
 
     @Autowired
     private PurchaseRepository purchaseRepository;
@@ -178,7 +177,7 @@ public class PurchaseResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(purchase.getId().intValue())))
             .andExpect(jsonPath("$.[*].userId").value(hasItem(DEFAULT_USER_ID)))
-            .andExpect(jsonPath("$.[*].productSku").value(hasItem(DEFAULT_PRODUCT_SKU)));
+            .andExpect(jsonPath("$.[*].productSku").value(hasItem(DEFAULT_PRODUCT_SKU.toString())));
     }
     
     @SuppressWarnings({"unchecked"})
@@ -226,7 +225,7 @@ public class PurchaseResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(purchase.getId().intValue()))
             .andExpect(jsonPath("$.userId").value(DEFAULT_USER_ID))
-            .andExpect(jsonPath("$.productSku").value(DEFAULT_PRODUCT_SKU));
+            .andExpect(jsonPath("$.productSku").value(DEFAULT_PRODUCT_SKU.toString()));
     }
 
     @Test
