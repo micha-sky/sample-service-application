@@ -24,7 +24,7 @@ public class Purchase implements Serializable {
     private Integer userId;
 
     @Column(name = "product_sku")
-    private Integer productSku;
+    private String productSku;
 
     @ManyToMany
     @JoinTable(name = "purchase_product_sku",
@@ -54,16 +54,16 @@ public class Purchase implements Serializable {
         this.userId = userId;
     }
 
-    public Integer getProductSku() {
+    public String getProductSku() {
         return productSku;
     }
 
-    public Purchase productSku(Integer productSku) {
+    public Purchase productSku(String productSku) {
         this.productSku = productSku;
         return this;
     }
 
-    public void setProductSku(Integer productSku) {
+    public void setProductSku(String productSku) {
         this.productSku = productSku;
     }
 
@@ -114,7 +114,7 @@ public class Purchase implements Serializable {
         return "Purchase{" +
             "id=" + getId() +
             ", userId=" + getUserId() +
-            ", productSku=" + getProductSku() +
+            ", productSku='" + getProductSku() + "'" +
             "}";
     }
 }

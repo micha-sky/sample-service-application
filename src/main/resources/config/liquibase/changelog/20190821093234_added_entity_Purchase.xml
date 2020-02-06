@@ -19,7 +19,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="product_sku" type="integer">
+            <column name="product_sku" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 
@@ -59,7 +59,7 @@
                   tableName="purchase">
             <column name="id" type="numeric"/>
             <column name="user_id" type="numeric"/>
-            <column name="product_sku" type="numeric"/>
+            <column name="product_sku" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>

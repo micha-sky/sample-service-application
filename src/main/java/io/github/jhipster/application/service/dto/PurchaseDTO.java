@@ -13,7 +13,7 @@ public class PurchaseDTO implements Serializable {
 
     private Integer userId;
 
-    private Integer productSku;
+    private String productSku;
 
 
     private Set<ProductDTO> productSkus = new HashSet<>();
@@ -34,11 +34,11 @@ public class PurchaseDTO implements Serializable {
         this.userId = userId;
     }
 
-    public Integer getProductSku() {
+    public String getProductSku() {
         return productSku;
     }
 
-    public void setProductSku(Integer productSku) {
+    public void setProductSku(String productSku) {
         this.productSku = productSku;
     }
 
@@ -76,7 +76,7 @@ public class PurchaseDTO implements Serializable {
         return "PurchaseDTO{" +
             "id=" + getId() +
             ", userId=" + getUserId() +
-            ", productSku=" + getProductSku() +
+            ", productSku='" + getProductSku() + "'" +
             "}";
     }
 }

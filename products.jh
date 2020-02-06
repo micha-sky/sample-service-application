@@ -7,7 +7,7 @@ entity Product {
 
 entity Purchase {
 	userId Integer
-    productSku Integer
+    productSku String
 }
 
 
